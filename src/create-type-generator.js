@@ -40,7 +40,7 @@ export default function createTypeGenerator(graphql) {
     }
   }
 
-  return function generate(document, implementations, options) {
+  return function generate(document, implementations, { defaultResolver = '_default' }) {
     var description = []
     function getDescription() {
       if (description.length === 0) return null
@@ -200,7 +200,7 @@ export default function createTypeGenerator(graphql) {
               type: getOutputType(field.type),
               description: getDescription(),
               args: args,
-              resolve: !isInterface && implementations[typeName] && (field.arguments || implementations[typeName][field.name.value])
+              resolve: !isInterface && implementations[typeName] && (field.arguments || implementations[typeName][field.name.value] || implementations[typeName][defaultResolver])
                 ? implementations[typeName][field.name.value]
                 : undefined
               // TODO: deprecationReason: string
