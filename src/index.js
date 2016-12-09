@@ -1,5 +1,4 @@
-import { graphql } from 'graphql'
-
+import * as graphql from 'graphql'
 import parse from './parser'
 import createTypeGenerator from './create-type-generator'
 
