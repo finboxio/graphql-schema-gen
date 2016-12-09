@@ -1,1 +1,1 @@
-import './parser.js';
+import './parser.js'
