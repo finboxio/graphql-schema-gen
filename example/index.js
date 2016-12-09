@@ -84,24 +84,24 @@ type Query {
   }
 });
 
-query(`
-{
-  me {
-    id
-    ...on Person {
-      role
-      dateOfBirth
-      name,
-      friends { id, name, dateOfBirth, role }
-      pet { ...on Dog {woof}}
-      hello
-      helloForbes: hello(name: "Forbes")
-    }
-  }
-}
-`, {}).then(function (result) {
-  if (result.errors) {
-    setTimeout(() => { throw result.errors[0]; }, 0);
-  }
-  console.dir(result, {colors: true, depth: 100});
-});
+// query(`
+// {
+//   me {
+//     id
+//     ...on Person {
+//       role
+//       dateOfBirth
+//       name,
+//       friends { id, name, dateOfBirth, role }
+//       pet { ...on Dog {woof}}
+//       hello
+//       helloForbes: hello(name: "Forbes")
+//     }
+//   }
+// }
+// `, {}).then(function (result) {
+//   if (result.errors) {
+//     setTimeout(() => { throw result.errors[0]; }, 0);
+//   }
+//   console.dir(result, {colors: true, depth: 100});
+// });
