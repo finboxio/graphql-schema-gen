@@ -1,6 +1,6 @@
 {
   "name": "finboxio-graphql-schema-gen",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Generate JavaScript GraphQL schema from the GraphQL language",
   "main": "./lib/index.js",
   "keywords": [],

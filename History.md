@@ -1,4 +1,13 @@
 
+0.0.6 / 2016-12-08
+==================
+
+  * fix args check on implicit computed fields
+  * create-schema-generator lint
+  * create-type-generator lint
+  * fix graphql import
+  * tests lint
+
 0.0.5 / 2016-12-08
 ==================
 
