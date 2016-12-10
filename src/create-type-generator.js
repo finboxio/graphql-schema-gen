@@ -180,7 +180,7 @@ export default function createTypeGenerator(graphql) {
             if (
               !isInterface &&
               field.arguments &&
-              !(implementations[typeName] && implementations[typeName][field.name.value])) {
+              !(implementations[typeName] && (implementations[typeName][field.name.value] || implementations[typeName][defaultResolver]))) {
               throw new Error(typeName + '.' + field.name.value + ' is calculated (i.e. it ' +
                               'accepts arguments) but does not have an implementation')
             }
@@ -201,7 +201,7 @@ export default function createTypeGenerator(graphql) {
               description: getDescription(),
               args: args,
               resolve: !isInterface && implementations[typeName] && (field.arguments || implementations[typeName][field.name.value] || implementations[typeName][defaultResolver])
-                ? implementations[typeName][field.name.value]
+                ? (implementations[typeName][field.name.value] || implementations[typeName][defaultResolver])
                 : undefined
               // TODO: deprecationReason: string
             }
