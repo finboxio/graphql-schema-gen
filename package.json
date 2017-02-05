@@ -4,8 +4,8 @@
   "description": "Generate JavaScript GraphQL schema from the GraphQL language",
   "main": "./lib/index.js",
   "keywords": [],
-  "dependencies": {
-    "graphql": "0.8.2"
+  "peerDependencies": {
+    "graphql": "^0.5.0-b || ^0.6.0 || ^0.7.0 || ^0.8.0-b || ^0.9.0"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
